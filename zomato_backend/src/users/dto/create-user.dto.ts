@@ -12,6 +12,9 @@ export class CreateUserDto {
   @Length(2, 30)
   lastName: string;
 
+  @IsString()
+  email: string
+
   @IsEnum(Gender)
   gender: Gender;
 

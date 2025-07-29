@@ -8,17 +8,17 @@ export class CartController {
   constructor(private readonly cartService: CartService) { }
 
 
-  @Post('add')
-  async addToCart(@Body() body: {
-    userId: number;
-    restaurantId: number;
-    items: { menuId: number; quantity: number }[];
-  }) {
-    return this.cartService.addToCart(
-      body.userId,
-      body.restaurantId,
-    );
-  }
+  // @Post('add')
+  // async addToCart(@Body() body: {
+  //   userId: number;
+  //   restaurantId: number;
+  //   items: { menuId: number; quantity: number }[];
+  // }) {
+  //   return this.cartService.addToCart(
+  //     body.userId,
+  //     body.restaurantId,
+  //   );
+  // }
 
 
 

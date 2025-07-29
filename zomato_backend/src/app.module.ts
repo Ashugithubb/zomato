@@ -13,9 +13,10 @@ import { CartItemsModule } from './cart-items/cart-items.module';
 import { NotificationModule } from './notification/notification.module';
 import { OrderModule } from './order/order.module';
 import { OrderItemModule } from './order-item/order-item.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), TypeOrmModule.forRootAsync(typeOrmConfig),UsersModule, RestaurantModule, MenuModule, RestaurantRatingsModule, CartModule, CartItemsModule, NotificationModule, OrderModule, OrderItemModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), TypeOrmModule.forRootAsync(typeOrmConfig),UsersModule, RestaurantModule, MenuModule, RestaurantRatingsModule, CartModule, CartItemsModule, NotificationModule, OrderModule, OrderItemModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

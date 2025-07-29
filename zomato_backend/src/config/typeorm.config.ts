@@ -9,6 +9,7 @@ import { Notification } from 'src/notification/entities/notification.entity';
 import { Order } from 'src/order/entities/order.entity';
 import { OrderItem } from 'src/order-item/entities/order-item.entity';
 import { RestaurantRating } from 'src/restaurant.ratings/entities/restaurant.rating.entity';
+import { Auth } from 'src/auth/entities/auth.entity';
 
 
 export const typeOrmConfig: TypeOrmModuleAsyncOptions = {
@@ -21,9 +22,9 @@ export const typeOrmConfig: TypeOrmModuleAsyncOptions = {
     username: configService.get<string>('DB_USERNAME'),
     password: configService.get<string>('DB_PASSWORD'),
     database: configService.get<string>('DB_DATABASE'),
-    synchronize: false,
-    entities:[User,Menu,Restaurant,Menu,Cart,CartItem,Notification,Order,OrderItem,RestaurantRating]
-   
+    synchronize: true,
+    entities: [User, Menu, Restaurant, Menu, Cart, CartItem, Notification, Order, OrderItem, RestaurantRating, Auth]
+
 
   }),
 };

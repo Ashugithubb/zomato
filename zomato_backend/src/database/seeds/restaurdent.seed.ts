@@ -10,13 +10,13 @@ export default class RestaurantSeeder implements Seeder {
     const restaurantRepo = dataSource.getRepository(Restaurant);
     const userRepo = dataSource.getRepository(User);
 
-    // Get users with Role.OWNER
+    
     const owners = await userRepo.find({
       where: { role: Role.OWNER },
     });
 
     if (owners.length === 0) {
-      console.warn('⚠️ No restaurant owners found. Seed users with Role.OWNER first.');
+      console.warn(' No restaurant owners found. Seed users with Role.OWNER first.');
       return;
     }
 
@@ -27,7 +27,7 @@ export default class RestaurantSeeder implements Seeder {
 
       restaurants.push(
         restaurantRepo.create({
-          name: faker.company.name(), // Consider adding a name if Restaurant has it
+          name: faker.company.name(), 
           description: faker.company.catchPhrase(),
           address: faker.location.streetAddress(),
           owner: randomOwner,
@@ -36,6 +36,6 @@ export default class RestaurantSeeder implements Seeder {
     }
 
     await restaurantRepo.save(restaurants);
-    console.log('✅ 10 Restaurants seeded.');
+    console.log(' 10 Restaurants seeded.');
   }
 }

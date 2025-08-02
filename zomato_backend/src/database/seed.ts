@@ -7,7 +7,7 @@ async function seed() {
   await AppDataSource.initialize();
   await new UserSeeder().run(AppDataSource); 
    await new  RestaurantSeeder().run(AppDataSource);
-  console.log('✅ User seeding complete');
+  console.log(' User seeding complete');
 }
 
 seed();

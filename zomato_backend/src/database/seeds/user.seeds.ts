@@ -28,6 +28,6 @@ export default class UserSeeder implements Seeder {
     }
 
     await userRepo.save(users);
-    console.log('✅ 20 users seeded.');
+    console.log(' 20 users seeded.');
   }
 }

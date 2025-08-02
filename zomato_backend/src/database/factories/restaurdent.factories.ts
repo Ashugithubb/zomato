@@ -10,13 +10,12 @@ export default class RestaurantSeeder implements Seeder {
     const restaurantRepo = dataSource.getRepository(Restaurant);
     const userRepo = dataSource.getRepository(User);
 
-    // Get existing users with the restaurant owner role
+    
     const owners = await userRepo.find({
       where: { role: Role.OWNER },
     });
 
     if (owners.length === 0) {
-      console.warn('⚠️ No restaurant owners found. Please seed users with RESTAURANT_OWNER role first.');
       return;
     }
 
@@ -36,6 +35,6 @@ export default class RestaurantSeeder implements Seeder {
     }
 
     await restaurantRepo.save(restaurants);
-    console.log('✅ 10 Restaurants seeded.');
+   
   }
 }
